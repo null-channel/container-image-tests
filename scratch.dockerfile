@@ -4,12 +4,13 @@ WORKDIR /app
 
 COPY . .
 
-RUN go build -o main .
+RUN CGO_ENABLED=0 go build -o main .
 
 EXPOSE 8080
 
 CMD ["./main"]
 
 FROM scratch
-COPY --from=base /app/main /main
-CMD ["./main"]
+WORKDIR /root/
+COPY --from=base /app/main .
+ENTRYPOINT [ "./main" ]
