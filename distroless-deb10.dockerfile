@@ -11,5 +11,5 @@ EXPOSE 8080
 CMD ["./main"]
 
 FROM gcr.io/distroless/base-debian10
-COPY --from=base /app/main /
+COPY --from=base /app/main /main
 CMD ["./main"]

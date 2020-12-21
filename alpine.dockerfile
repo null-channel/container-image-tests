@@ -11,5 +11,5 @@ EXPOSE 8080
 CMD ["./main"]
 
 FROM alpine:latest
-COPY --from=base /app/main /
+COPY --from=base /app/main /main
 CMD ["./main"]
