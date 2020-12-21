@@ -1,11 +1,10 @@
-name: PublishImages
+name: publish_images
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-name: publish_images
 
 jobs:
   multi:
