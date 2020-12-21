@@ -14,7 +14,8 @@ func main() {
 var count = 0
 
 func hello(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "hello %b/n", count)
+	count++
+	fmt.Fprintf(w, "hello %b\n", count)
 }
 
 func headers(w http.ResponseWriter, req *http.Request) {

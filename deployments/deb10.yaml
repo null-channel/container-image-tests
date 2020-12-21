@@ -10,16 +10,18 @@ spec:
     - name: front-end
       image: nullchannel/container-tests-deb:latest
       ports:
-        - containerPort: 8080
+        - containerPort: 8090
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: deb-app-service
 spec:
+  type: NodePort
   selector:
     app: deb-app
   ports:
+  ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
+      port: 8090
+      targetPort: 8090
